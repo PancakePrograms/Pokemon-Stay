@@ -5,7 +5,10 @@ body {
     background-color: #EEEEEE;
     overflow: hidden;
     background-image: url("/photos/background.jpg");
-    background-size: 150%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    
 }
 .home {
   width: 100%;
@@ -40,6 +43,7 @@ body {
   transform: translateX(-50%);
   z-index: 0;
   transition: .5s;
+  overflow: hidden;
 }
 .nav_buttons{
   visibility: hidden;
@@ -63,4 +67,35 @@ body {
 .battle span {
   color: white;
   font-size: 16px;
+}
+.ownedPokemon_container {
+  position: fixed;
+  top: 100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 95vh;
+  background-color: white;
+  z-index: 3;
+  border: 3px solid black;
+  border-radius: 25px;
+  text-align: center;
+  visibility: hidden;
+  transition: .5s;
+}
+.ownedPokemon_grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.closePokemon_pokemon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
 }

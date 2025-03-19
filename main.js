@@ -33,3 +33,44 @@ action.addEventListener("click", () => {
   }
 });
 //--------------
+
+const owned_container = document.querySelector(".ownedPokemon_container");
+const pokemon_list = document.getElementById("pokemonList");
+
+pokemon_list.addEventListener("click", () => {
+  owned_container.style.visibility = "visible";
+  owned_container.style.top = "30px";
+});
+
+const close_owned_container = document.querySelector(".closePokemon_pokemon");
+
+close_owned_container.addEventListener("click", () => {
+  owned_container.style.visibility = "hidden";
+  owned_container.style.top = "100vh";
+})
+
+const ownedPokemonGrid = document.querySelector(".ownedPokemon_grid")
+let pikachu = {
+  image: "/photos/pikachu.png",
+  name: "Pikachu",
+  type: "Electric",
+  level: 5,
+  hp: 140,
+  atk: 100,
+  def: 100
+}
+let owned_pikachu = 1;
+
+function collection() {
+  if (owned_pikachu = 1) {
+    let pikachu_div = document.createElement("div");
+    pikachu_div.classList.add("owned_pokemon");
+    pikachu_div.innerHTML = `<img src="${pikachu.image}" alt="${pikachu.name}">
+    <span>${pikachu.name}</>`
+    ownedPokemonGrid.appendChild(pikachu_div);
+  }
+}
+function addPikachu() {
+  setInterval(collection, 1000);
+}
+addPikachu();
